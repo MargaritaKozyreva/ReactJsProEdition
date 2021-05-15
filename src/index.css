@@ -1,4 +1,16 @@
+@font-face {
+    font-family: 'Karla';
+    src: url('./@fonts/Karla-Regular.ttf');
+}
+
 body {
     min-height: 100vh;
-    background: steelblue;
+    overflow-x: hidden;
+}
+
+html,
+body {
+    font-family: 'Karla', sans-serif;
+    margin: 0;
+    padding: 0;
 }

@@ -1,12 +1,9 @@
 import React from 'react';
+import HomePage from './pages/Home';
 import s from './App.module.scss';
 
 const App: React.FC = (): JSX.Element => {
-  return (
-    <div className={s.header}>
-      This is <span>App Component!</span>
-    </div>
-  );
+  return <HomePage />;
 };
 
 export default App;
