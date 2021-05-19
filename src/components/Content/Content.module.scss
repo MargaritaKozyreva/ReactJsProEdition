@@ -1,0 +1,15 @@
+@import '../../variables';
+
+.root {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.wrap {
+  position: relative;
+  padding: 0 $app-margin;
+  width: 100%;
+  top: 0;
+}

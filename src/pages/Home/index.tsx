@@ -4,13 +4,14 @@ import Header from '../../components/Header';
 import Parallax from '../../components/Parallax';
 import Heading from '../../components/Heading';
 import s from './Home.module.scss';
+import { navigate } from 'hookrouter';
 
 const HomePage = () => {
   return (
     <div className={s.root}>
       <Header />
       <div className={s.rootWrapper}>
-        <Heading type={'h1'} >
+        <Heading type="h1" >
           <b>Find</b> all your
           <br />
           favotite
@@ -18,14 +19,14 @@ const HomePage = () => {
           <b>Pokemon</b>
         </Heading>
 
-        <Heading type={'h3'}>
+        <Heading type="h3">
           You can know the type of Pokemon,
           <br />
           its strengths, disadvantages and
           <br />
           abilities
         </Heading>
-        <Button onClick={(event) => console.log(event)}>See pokemons</Button>
+        <Button onClick={() => navigate("/pokedex")}>See pokemons</Button>
         <div className={s.contentParallax}>
           <Parallax />
         </div>

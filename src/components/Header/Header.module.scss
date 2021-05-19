@@ -31,6 +31,13 @@
     height: 63px;
 }
 
+.activeLink {
+    &:after {
+        opacity: 1;
+        width: 100%;
+    }
+}
+
 .menuLink {
     font-family: Karla;
     font-style: normal;

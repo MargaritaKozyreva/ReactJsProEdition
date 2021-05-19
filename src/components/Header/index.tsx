@@ -1,37 +1,12 @@
 import React from 'react';
+import { A , usePath } from 'hookrouter';
 import s from './Header.module.scss';
 import { ReactComponent as Logo } from './assets/Logo.svg';
+import { GENERAL_MENU } from '../../routes';
 
-interface IMenu {
-  id: number;
-  title: string;
-  link: string;
-}
-
-const MENU: Array<IMenu> = [
-  {
-    id: 1,
-    title: 'Home',
-    link: '#',
-  },
-  {
-    id: 2,
-    title: 'Pokedex',
-    link: '#',
-  },
-  {
-    id: 3,
-    title: 'Legendaries',
-    link: '#',
-  },
-  {
-    id: 4,
-    title: 'Documentation',
-    link: '#',
-  },
-];
 
 const Header = () => {
+
   return (
     <div className={s.root}>
       <div className={s.wrap}>
@@ -39,10 +14,10 @@ const Header = () => {
           <Logo />
         </div>
         <div className={s.menuWrap}>
-          {MENU.map(({ id, title, link }, index) => (
-            <a key={id} href={link} className={s.menuLink}>
+          {GENERAL_MENU.map(({ title, link }) => (
+            <A key={title } href={link} className={s.menuLink}>
               {title}
-            </a>
+            </A>
           ))}
         </div>
       </div>
