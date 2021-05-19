@@ -1,0 +1,74 @@
+@import "../../variables";
+
+.root {
+    height: 93px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $third;
+    box-shadow: 0px 4px 16px rgba(1, 28, 64, 0.2);
+}
+
+.wrap {
+    width: 100%;
+    max-width: 1125px;
+    height: 63px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menuWrap {
+    display: flex;
+    align-items: center;
+    max-width: 658px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.pokemonLogo {
+    width: 158px;
+    height: 63px;
+}
+
+.activeLink {
+    &:after {
+        opacity: 1;
+        width: 100%;
+    }
+}
+
+.menuLink {
+    font-family: Karla;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 29px;
+    color: $dark;
+    text-decoration: none;
+    position: relative;
+
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: -8px;
+        height: 1px;
+        width: 1%;
+        opacity: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+        background: $dark;
+        border: 1px solid $dark;
+        border-radius: 6px;
+        transition: opacity, width ease-in-out .25s;
+    }
+
+    &:hover {
+        &:after {
+            opacity: 1;
+            width: 100%;
+        }
+
+    }
+}
