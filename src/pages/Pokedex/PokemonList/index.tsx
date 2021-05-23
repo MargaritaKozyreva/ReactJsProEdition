@@ -1,5 +1,5 @@
-import { IPokemons } from '../../../mocks/pokemons';
 import React from 'react';
+import { IPokemons } from '../../../mocks/pokemons';
 import PokemonCard from '../PokemonCard';
 import style from './PokemonList.module.scss';
 

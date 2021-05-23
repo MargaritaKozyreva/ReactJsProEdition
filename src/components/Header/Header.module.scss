@@ -31,13 +31,6 @@
     height: 63px;
 }
 
-.activeLink {
-    &:after {
-        opacity: 1;
-        width: 100%;
-    }
-}
-
 .menuLink {
     font-family: Karla;
     font-style: normal;
@@ -64,7 +57,8 @@
         transition: opacity, width ease-in-out .25s;
     }
 
-    &:hover {
+    &:hover,
+    &.activeLink  {
         &:after {
             opacity: 1;
             width: 100%;

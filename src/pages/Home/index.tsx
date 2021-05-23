@@ -1,15 +1,13 @@
 import React from 'react';
+import { navigate } from 'hookrouter';
 import Button from '../../components/Button';
-import Header from '../../components/Header';
 import Parallax from '../../components/Parallax';
 import Heading from '../../components/Heading';
 import s from './Home.module.scss';
-import { navigate } from 'hookrouter';
 
 const HomePage = () => {
   return (
     <div className={s.root}>
-      <Header />
       <div className={s.rootWrapper}>
         <Heading type="h1" >
           <b>Find</b> all your

@@ -1,4 +1,4 @@
-src/example.ts
+webpack.config
+webpack.client.config
+webpack.server.config
 *.css
-
-webpack.config.js
