@@ -1,12 +1,12 @@
 import React from 'react';
-import { IPokemons } from '../../../mocks/pokemons';
+import { IPokemon } from '../../../interface/pokemons';
 import PokemonCard from '../PokemonCard';
 import style from './PokemonList.module.scss';
 
 interface PokemonListTypes {
   [key: string]: any;
   children?: React.ReactNode;
-  pokemons: Array<IPokemons>;
+  pokemons: Array<IPokemon>;
 }
 
 const PokemonList: React.FC<PokemonListTypes> = (props): JSX.Element => {
@@ -15,7 +15,7 @@ const PokemonList: React.FC<PokemonListTypes> = (props): JSX.Element => {
   return (
     <div>
       <div className={style.root}>
-        {pokemons.map((pokemon) => (
+        {pokemons.map((pokemon: IPokemon) => (
           <PokemonCard key={pokemon.id} {...pokemon} />
         ))}
       </div>
