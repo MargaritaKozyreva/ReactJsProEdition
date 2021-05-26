@@ -1,0 +1,19 @@
+.root {
+    background: #F2F2F2;
+    box-shadow: 2px 2px 2px rgba(33, 33, 33, 0.1);
+    border-radius: 40px;
+    position: relative;
+    padding: 8px 20px;
+}
+
+.root input {
+    border: none;
+    background-color: inherit;
+    width: 100%;
+    color: rgba(33, 33, 33, 0.8);
+}
+
+.root input:focus,
+.root input:active {
+    outline: none;
+}
