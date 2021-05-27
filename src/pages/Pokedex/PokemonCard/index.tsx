@@ -3,11 +3,19 @@ import { IPokemons } from '../../../mocks/pokemons';
 import Heading from '../../../components/Heading';
 import s from './PokemonCard.module.scss';
 
-const PokemonCard: React.FC<IPokemons> = (props): JSX.Element => {
-  const { id, name_clean, stats, types, img } = props;
+type PokemonCardProps = IPokemons & Props & HTMLAttributeProps;
+interface Props {
+  children?: React.ReactNode;
+}
+interface HTMLAttributeProps {
+  onClick?: React.MouseEventHandler<HTMLDivElement> ;
+}
+
+const PokemonCard: React.FC<PokemonCardProps> = (props): JSX.Element => {
+  const { id, name_clean, stats, types, img, onClick } = props;
 
   return (
-    <div className={s.root}>
+    <div className={s.root} onClick={onClick}>
       <div className={s.infoWrap}>
         <Heading type="h5" className={s.titleName}>
           {name_clean}

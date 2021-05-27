@@ -1,0 +1,49 @@
+.root {
+    width: 796px;
+    height: 371px;
+    background: linear-gradient(180deg, #732119 42.19%, #D93E30 100%);
+    border-radius: 16px;
+    margin: 0 auto;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 4px 4px 8px rgba(1, 28, 64, 0.2);
+    border-radius: 16px;
+    height: 100%;
+}
+
+.imgCard {
+    width: 40%;
+    background: linear-gradient(270deg, #B33327 0.15%, #D93E30 100%);
+    border-radius: inherit;
+
+    img {
+        width: 341px;
+        height: 348px;
+    }
+}
+
+.infoPart {
+    width: 60%;
+    background: linear-gradient(180deg, #732119 42.19%, #D93E30 100%);
+    margin: 15px;
+    border-radius: inherit;
+
+    h3 {
+        color: #FDFDFD !important;
+    }
+}
+
+.infoBlock {
+    background: #FDFDFD;
+    box-shadow: 4px 4px 4px rgba(33, 33, 33, 0.1);
+    border-radius: 8px;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.abilitiesBlock {
+    color: #000000;
+}

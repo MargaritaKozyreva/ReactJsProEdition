@@ -1,3 +1,4 @@
+import { navigate } from 'hookrouter';
 import React from 'react';
 import { IPokemon } from '../../../interface/pokemons';
 import PokemonCard from '../PokemonCard';
@@ -16,7 +17,7 @@ const PokemonList: React.FC<PokemonListTypes> = (props): JSX.Element => {
     <div>
       <div className={style.root}>
         {pokemons.map((pokemon: IPokemon) => (
-          <PokemonCard key={pokemon.id} {...pokemon} />
+          <PokemonCard key={pokemon.id} {...pokemon} onClick={() => navigate(`/pokemon/${pokemon.id}`)}/>
         ))}
       </div>
     </div>
