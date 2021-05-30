@@ -1,11 +1,44 @@
 import config from "../config"
 
-const getUrlWithParamsConfig = (endpointConfig: string, query: object) => {
-  const url = {
+interface IApiConfigUri {
+  query?: object;
+  pathname: string;
+  protocol: string;
+  host: string;
+}
+
+interface IEndPoint {
+  method: string,
+  uri: {
+    pathname: string,
+    query?: object
+  }
+}
+
+interface IFinalConfig {
+  method: string,
+  uri: {
+    pathname: string,
+    query?: object
+  },
+  body?: object
+}
+
+const getUrlWithParamsConfig = (endpointConfig: string, params: any) => {
+  const { method, uri }: IEndPoint = config.client.endpoint[endpointConfig as keyof typeof config.client.endpoint];
+  let body = {};
+
+  const apiConfigUri: IApiConfigUri = {
     ...config.client.server,
-    ...config.client.endpoint[endpointConfig].uri,
-    query: {}
-  };
+    ...uri,
+    query: {
+      ...uri.query
+    }
+  }
+
+  const query = {
+    ...params
+  }
 
   const path = Object.keys(query).reduce((acc, val) => {
     if (acc.indexOf(`{${val}}`) !== -1) {
@@ -14,14 +47,31 @@ const getUrlWithParamsConfig = (endpointConfig: string, query: object) => {
       return result
     }
     return acc
-  }, url.pathname);
+  }, apiConfigUri.pathname);
 
-  url.pathname = path;
-  url.query = {
+  if (method === "GET") {
+    apiConfigUri.query = {
+      ...apiConfigUri.query,
+      ...query
+    }
+  } else {
+    body = query
+  }
+
+  apiConfigUri.pathname = path;
+  apiConfigUri.query = {
     ...query
   }
 
-  return url
+  const finalConfig: IFinalConfig = {
+    method,
+    uri: apiConfigUri,
+    body
+  }
+
+  console.log(finalConfig)
+
+  return finalConfig
 }
 
 export default getUrlWithParamsConfig
