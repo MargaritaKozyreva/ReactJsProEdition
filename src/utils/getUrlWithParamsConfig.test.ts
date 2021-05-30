@@ -6,12 +6,14 @@ describe('getUrlWithParamsConfig', () => {
     const url = getUrlWithParamsConfig('getPokemons', {});
 
     expect(url).toEqual({
-
-      protocol: "http",
-      host: "zar.hosthot.ru",
-      pathname: "/api/v1/pokemons",
-      query: {}
-
+      "method": "GET",
+      "uri": {
+        "protocol": "http",
+        "host": "zar.hosthot.ru",
+        "pathname": "/api/v1/pokemons",
+        "query": {}
+      },
+      "body": {}
     })
 
   })
@@ -20,12 +22,16 @@ describe('getUrlWithParamsConfig', () => {
     const url = getUrlWithParamsConfig('getPokemons', { name: 'Pikachu' });
 
     expect(url).toEqual({
-
-      protocol: "http",
-      host: "zar.hosthot.ru",
-      pathname: "/api/v1/pokemons",
-      query: { name: 'Pikachu' }
-
+      "method": "GET",
+      "uri": {
+        "protocol": "http",
+        "host": "zar.hosthot.ru",
+        "pathname": "/api/v1/pokemons",
+        "query": {
+          "name": "Pikachu"
+        }
+      },
+      "body": {}
     })
 
   })
@@ -34,12 +40,14 @@ describe('getUrlWithParamsConfig', () => {
     const url = getUrlWithParamsConfig('getPokemon', { id: 1 });
 
     expect(url).toEqual({
-
-      protocol: "http",
-      host: "zar.hosthot.ru",
-      pathname: "/api/v1/pokemon/1",
-      query: {}
-
+      "method": "GET",
+      "uri": {
+        "protocol": "http",
+        "host": "zar.hosthot.ru",
+        "pathname": "/api/v1/pokemon/1",
+        "query": {}
+      },
+      "body": {}
     })
 
   })
@@ -51,17 +59,18 @@ describe('getUrlWithParamsConfig', () => {
     const url = getUrlWithParamsConfig('createPokemon', { name: "MyPokemon" });
 
     expect(url).toEqual({
-      method: "POST",
-      uri: {
-        protocol: "http",
-        host: "zar.hosthot.ru",
-        pathname: "/api/v1/pokemon/1",
-        query: {}
+      "method": "POST",
+      "uri": {
+        "protocol": "http",
+        "host": "zar.hosthot.ru",
+        "pathname": "/api/v1/pokemon/create",
+        "query": {
+          "name": "MyPokemon"
+        }
       },
-      body: {
-        name: "MyPokemon"
+      "body": {
+        "name": "MyPokemon"
       }
-
     })
 
   })
@@ -73,17 +82,14 @@ describe('getUrlWithParamsConfig', () => {
     const url = getUrlWithParamsConfig('updatePokemon', { id: 1 });
 
     expect(url).toEqual({
-      method: "POST",
-      uri: {
-        protocol: "http",
-        host: "zar.hosthot.ru",
-        pathname: "/api/v1/pokemon/1",
-        query: {}
+      "method": "PATCH",
+      "uri": {
+        "protocol": "http",
+        "host": "zar.hosthot.ru",
+        "pathname": "/api/v1/pokemon/1",
+        "query": {}
       },
-      body: {
-        id: 1
-      }
-
+      "body": {}
     })
 
   })
@@ -95,17 +101,14 @@ describe('getUrlWithParamsConfig', () => {
     const url = getUrlWithParamsConfig('deletePokemon', { id: 1 });
 
     expect(url).toEqual({
-      method: "POST",
-      uri: {
-        protocol: "http",
-        host: "zar.hosthot.ru",
-        pathname: "/api/v1/pokemon/1",
-        query: {}
+      "method": "DELETE",
+      "uri": {
+        "protocol": "http",
+        "host": "zar.hosthot.ru",
+        "pathname": "/api/v1/pokemon/1/delete",
+        "query": {}
       },
-      body: {
-        id: 1
-      }
-
+      "body": {}
     })
 
   })

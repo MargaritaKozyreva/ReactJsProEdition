@@ -29,7 +29,6 @@ const config: IConfig = {
         },
       },
       // FAKE API
-
       createPokemon: {
         method: 'POST',
         uri: {

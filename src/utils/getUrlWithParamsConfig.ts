@@ -1,6 +1,6 @@
 import config from "../config"
 
-interface IApiConfigUri {
+export interface IApiConfigUri {
   query?: object;
   pathname: string;
   protocol: string;
@@ -26,18 +26,22 @@ interface IFinalConfig {
 
 const getUrlWithParamsConfig = (endpointConfig: string, params: any) => {
   const { method, uri }: IEndPoint = config.client.endpoint[endpointConfig as keyof typeof config.client.endpoint];
+  console.log('getUrlWithParamsConfig uri ', uri)
   let body = {};
 
   const apiConfigUri: IApiConfigUri = {
     ...config.client.server,
-    ...uri,
+    ...uri, // pathname: "/api/v1/pokemon/{id}"
     query: {
       ...uri.query
     }
   }
 
+  console.log('getUrlWithParamsConfig query ', apiConfigUri.query)
+  console.log('getUrlWithParamsConfig pathname ', apiConfigUri.pathname)
+
   const query = {
-    ...params
+    ...params // id: 1
   }
 
   const path = Object.keys(query).reduce((acc, val) => {
@@ -54,6 +58,9 @@ const getUrlWithParamsConfig = (endpointConfig: string, params: any) => {
       ...apiConfigUri.query,
       ...query
     }
+
+    console.log(method)
+    console.log(apiConfigUri)
   } else {
     body = query
   }
@@ -63,13 +70,11 @@ const getUrlWithParamsConfig = (endpointConfig: string, params: any) => {
     ...query
   }
 
-  const finalConfig: IFinalConfig = {
+  const finalConfig = {
     method,
     uri: apiConfigUri,
     body
   }
-
-  console.log(apiConfigUri)
 
   return finalConfig
 }
