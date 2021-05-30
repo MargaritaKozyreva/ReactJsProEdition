@@ -1,0 +1,11 @@
+@import '../../variables';
+
+.root {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #ffffff 30.32%, #f5f5f5 100%);
+}
+
+.root_title {
+  text-align: center;
+}

@@ -1,0 +1,41 @@
+@import "../../variables";
+
+.root {
+    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(180deg, $third 0%, $primary 100%);
+    width: 100%;
+    z-index: -1;
+}
+
+.rootWrapper {
+    margin-top: -48px;
+    margin-left: 156px;
+}
+
+.content {
+    font-family: Karla;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 72px;
+    line-height: 84px;
+    letter-spacing: 4px;
+
+    color: #000000;
+    margin-bottom: 32px;
+}
+
+.text {
+    font-family: Karla;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 42px;
+    margin-bottom: 48px;
+}
+
+.contentParallax {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
