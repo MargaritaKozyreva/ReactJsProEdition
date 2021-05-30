@@ -20,6 +20,7 @@ module.exports = {
     'no-console': 'off',
     'camelcase': 'off',
     'react/jsx-props-no-spreading': 'off',
+    'no-return-await': 'off',
     'react/jsx-filename-extension': ['error', { extensions: ['.jsx', '.tsx', '.ts', '.js', '.d.ts'] }],
     'import/extensions': [
       'error',

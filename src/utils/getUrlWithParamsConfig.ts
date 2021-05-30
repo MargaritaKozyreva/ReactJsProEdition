@@ -69,7 +69,7 @@ const getUrlWithParamsConfig = (endpointConfig: string, params: any) => {
     body
   }
 
-  console.log(finalConfig)
+  console.log(apiConfigUri)
 
   return finalConfig
 }
