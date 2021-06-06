@@ -1,5 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
+import { connect } from 'react-redux';
 import s from './Pokemon.module.scss';
 import useData from '../../hook/getData/getData';
 import Heading from '../../components/Heading';
@@ -8,9 +9,9 @@ import { IPokemon } from '../../interface/pokemons';
 export interface PokemonPropTypes {
   id: string | number;
 }
+
 const Pokemon: React.FC<PokemonPropTypes> = ({ id }) => {
   const { data, isLoading } = useData<IPokemon>('getPokemon', { id });
-  console.log(data);
 
   if (isLoading) {
     return <div>is loading...</div>;

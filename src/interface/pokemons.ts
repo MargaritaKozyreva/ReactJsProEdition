@@ -31,6 +31,7 @@ interface IPokemonsData {
   pokemons: Array<IPokemon>
 }
 
+export type ITypesRequest = string[];
 export default IPokemonsData
 
 

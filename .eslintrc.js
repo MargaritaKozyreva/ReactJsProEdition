@@ -17,6 +17,7 @@ module.exports = {
     'jsx-a11y/no-static-element-interactions': 'off',
     'react/prop-types': 'off',
     '@typescript-eslint/no-unused-vars': 'error',
+    'import/prefer-default-export': 'off',
     'no-console': 'off',
     'camelcase': 'off',
     'react/jsx-props-no-spreading': 'off',
