@@ -1,0 +1,61 @@
+@import '../../variables';
+
+.root {
+    position: relative;
+    background-color: $danger;
+    height: 100vh;
+    width: 100%;
+}
+
+.wrapContent {
+    position: relative;
+    margin: 0 auto;
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.wrapMainContent {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.wrapMainText {
+    position: absolute;
+    bottom: 20%;
+    text-align: center;
+    width: 100%;
+}
+
+.teamRocket {
+    margin: 0 auto;
+    position: absolute;
+    top: 6%;
+}
+
+.errorLabel {
+    position: absolute;
+    text-align: center;
+    font-family: Karla;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 500px;
+    letter-spacing: 4px;
+    color: rgba(0, 0, 0, 0.5);
+    top: 50px;
+}
+
+.wrapButton {
+    margin: 0 auto;
+    position: absolute;
+    text-align: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    bottom: 65px;
+}
+
